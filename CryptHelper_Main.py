@@ -1,6 +1,20 @@
 from crypthelper import *
 import argparse
 
+def showLogo():
+	strMessage = '''
+
+_---_--_----_--------__-_-____--_---__--_--_----__-_-_-----__-------
+|     _       `  .  crypthelper  , .     do `  ~   magic  * ` .
+|    (o)        *    	*  .    might   *   the   ~ *  . `
+|   |[~]|
+|    | |     *    `    .      ~  *     `     .
+|    " "
+_---_--_----_--------__-_-____--_---__--_--_----__-_-_-----__-------
+
+
+'''
+	print(strMessage)
 
 def validateInput(objArgumentsPassed) -> (str, str):
 	bolKeyNotPresent = ("<class 'NoneType'>" == str(type(objArgumentsPassed.get_key)))
@@ -31,7 +45,9 @@ def validateInput(objArgumentsPassed) -> (str, str):
 	return strAction, strKeyFilepath
 
 
+
 if __name__ == "__main__":
+	showLogo()
 	parser = argparse.ArgumentParser(description="crypthelper")
 	parser.add_argument("file", help="File to apply multiple encrypts/decrypts")
 	parser.add_argument("-k", "--key", dest="get_key", action="store",
