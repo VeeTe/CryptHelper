@@ -49,13 +49,13 @@ def validateInput(objArgumentsPassed) -> (str, str):
 if __name__ == "__main__":
 	showLogo()
 	parser = argparse.ArgumentParser(description="crypthelper")
-	parser.add_argument("file", help="File to apply multiple encrypts/decrypts")
+	parser.add_argument("file", help="file to apply multiple encrypts/decrypts")
 	parser.add_argument("-k", "--key", dest="get_key", action="store",
-						help="load in an existing key")
+						help="load an existing key")
 	parser.add_argument("-e", "--encrypt", action="store_true",
-						help="to specify file to encrypt (if option -k is not used a new key will be generated)")
+						help="to set the flag for encryption (if option -k is not used a new key will be generated)")
 	parser.add_argument("-d", "--decrypt", action="store_true",
-						help="to specify file to decrypt")
+						help="to set the flag for decryption")
 	objArguments = parser.parse_args()
 
 	strAction, strKeyFilepath = validateInput(objArguments)
